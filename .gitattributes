@@ -1,0 +1,8 @@
+# 标记 renren-fast 模块的 Swagger UI 前端资源为 vendored（第三方库）
+# 防止 GitHub Linguist 将其计入项目语言统计
+renren-fast/src/main/resources/static/** linguist-vendored
+
+# 标记 renren-generator 的前端视图为 vendored（代码生成器模板）
+renren-generator/src/main/resources/views/** linguist-vendored
+renren-generator/src/main/resources/static/** linguist-vendored
+renren-generator/src/main/resources/template/** linguist-vendored
