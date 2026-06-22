@@ -1,0 +1,34 @@
+#数据源
+
+
+
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #数据库主键自增
+  global-config:
+    db-config:
+      id-type: auto
+
+server:
+  port: 8010
+spring:
+  redis:
+    host: your-redis-host
+  session:
+    store-type: redis
+#  zipkin:
+#    base-url: http://your-zipkin-host:9411/
+#    discovery-client-enabled: false
+#    sender:
+#      type: web
+#  sleuth:
+#    sampler:
+#      probability: 1
+
+
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858

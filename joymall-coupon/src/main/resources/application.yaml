@@ -1,0 +1,37 @@
+#数据源
+spring:
+  datasource:
+    username: root
+    password: your-password
+    url: jdbc:mysql://your-mysql-host:3306/joymall_sms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #服务注册到nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: your-nacos-host:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858
+  application:
+    name: joymall-coupon
+
+
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #数据库主键自增
+  global-config:
+    db-config:
+      id-type: auto
+#访问端口
+
+
+logging:
+  level:
+    com.joy.joymall: debug
+    com.alibaba.nacos.client.config.impl: warn
+
+server:
+  port: 7001

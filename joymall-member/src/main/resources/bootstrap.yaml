@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: root
+    password: your-password
+    url: jdbc:mysql://your-mysql-host:3306/joymall_ums?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: joymall-member
+  cloud:
+    nacos:
+      discovery:
+        server-addr: your-nacos-host:8848
+      config:
+        server-addr: your-nacos-host:8848
+        file-extension: yaml
+        namespace: your-namespace

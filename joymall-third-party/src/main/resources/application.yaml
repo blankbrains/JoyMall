@@ -1,0 +1,18 @@
+server:
+  port: 30000
+
+spring:
+  #OSS存储
+  cloud:
+    alicloud:
+      sms:
+        host: https://gyytz.market.alicloudapi.com
+        path: /sms/smsSend
+        appcode: your-appcode
+        sms-sign-id: your-sms-sign-id
+        template-id: your-template-id
+      access-key: your-access-key
+      secret-key: your-secret-key
+      oss:
+        endpoint: your-oss-endpoint
+        bucket: your-bucket

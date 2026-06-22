@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  redis:
+    host: your-redis-host
+  session:
+    store-type: redis
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858

@@ -1,0 +1,88 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://joymall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: coupon_route
+          uri: lb://joymall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+
+        - id: ware_route
+          uri: lb://joymall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://joymall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+
+        - id: third-party
+          uri: lb://joymall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: admin_root
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: joymall_search_route
+          uri: lb://joymall-search
+          predicates:
+            - Host=search.joymall.com
+
+
+        - id: joymall_host_route
+          uri: lb://joymall-product
+          predicates:
+            - Host=joymall.com,item.joymall.com
+
+
+        - id: joymall_auth_route
+          uri: lb://joymall-auth-server
+          predicates:
+          - Host=auth.joymall.com
+
+        - id: joymall_cart_route
+          uri: lb://joymall-cart
+          predicates:
+          - Host=cart.joymall.com
+
+        - id: joymall_order_route
+          uri: lb://joymall-order
+          predicates:
+          - Host=order.joymall.com
+
+        - id: joymall_member_route
+          uri: lb://joymall-member
+          predicates:
+            - Host=member.joymall.com
+
+        - id: joymall_seckill_route
+          uri: lb://joymall-seckill
+          predicates:
+            - Host=seckill.joymall.com
+
+
+
+

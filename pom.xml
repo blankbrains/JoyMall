@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.joy.joymall</groupId>
+    <artifactId>joymall</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>joymall</name>
+    <description>聚合服务</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <fork>true</fork>
+                        <compilerArgs>
+                            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                            <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+<!--    父模块聚合-->
+    <modules>
+        <module>joymall-coupon</module>
+        <module>joymall-member</module>
+        <module>joymall-order</module>
+        <module>joymall-product</module>
+        <module>joymall-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>joymall-common</module>
+        <module>joymall-gateway</module>
+        <module>joymall-search</module>
+        <module>joymall-cart</module>
+        <module>joymall-third-party</module>
+        <module>joymall-seckill</module>
+    </modules>
+
+</project>

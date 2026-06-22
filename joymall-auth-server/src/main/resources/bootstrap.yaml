@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: joymall-auth-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: your-nacos-host:8848
+      config:
+        server-addr: your-nacos-host:8848

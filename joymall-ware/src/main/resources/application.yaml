@@ -1,0 +1,51 @@
+server:
+  port: 11000
+
+#数据源
+spring:
+  datasource:
+    username: root
+    password: your-password
+    url: jdbc:mysql://your-mysql-host:3306/joymall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: joymall-ware
+  cloud:
+    nacos:
+      discovery:
+        server-addr: your-nacos-host:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  rabbitmq:
+    host: your-rabbitmq-host
+    port: 5672
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #数据库主键自增
+  global-config:
+    db-config:
+      id-type: auto
+
+logging:
+  level:
+    com.joy: debug
+
+#seata:
+#  service:
+#    vgroup-mapping: "joymall-ware-group"="default"
+#  application-id: ${spring.application.name}
+#  enabled: true
+#  tx-service-group: ${spring.application.name}-group
+#  enable-auto-data-source-proxy: true
+

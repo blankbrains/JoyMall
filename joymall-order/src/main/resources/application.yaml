@@ -1,0 +1,41 @@
+server:
+  port: 9010
+
+#数据源
+spring:
+  datasource:
+    username: root
+    password: your-password
+    url: jdbc:mysql://your-mysql-host:3306/joymall_oms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858
+
+
+  rabbitmq:
+    host: your-rabbitmq-host
+    port: 5672
+    virtual-host: /
+    #消费者手动接收消息
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+#mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #数据库主键自增
+  global-config:
+    db-config:
+      id-type: auto
+
+#seata:
+#  service:
+#    vgroup-mapping: "joymall-order-group"="default"
+#  application-id: ${spring.application.name}
+#  enabled: true
+#  tx-service-group: ${spring.application.name}-group
+#  enable-auto-data-source-proxy: true

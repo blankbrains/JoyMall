@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: joymall-cart
+  cloud:
+    nacos:
+      config:
+        server-addr: your-nacos-host:8848
+      config:
+        server-addr: your-nacos-host:8848

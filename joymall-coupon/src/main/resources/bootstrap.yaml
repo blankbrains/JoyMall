@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: joymall-coupon
+  cloud:
+    nacos:
+      discovery:
+        server-addr: your-nacos-host:8848
+      config:
+        server-addr: your-nacos-host:8848
+        namespace: your-namespace
+        group: dev
+        file-extension: properties
+        extension-configs:
+          - data-id: datasource.yaml
+            group: dev
+            refresh: true
+          - data-id: mybatis.yaml
+            group: dev
+            refresh: true
+          - data-id: other.yaml
+            group: dev
+            refresh: true
+
+

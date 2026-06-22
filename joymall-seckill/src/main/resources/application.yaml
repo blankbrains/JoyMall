@@ -1,0 +1,20 @@
+spring:
+  redis:
+    host: your-redis-host
+  rabbitmq:
+    host: your-rabbitmq-host
+    virtual-host: /
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858
+
+logging:
+  level:
+    com.joy.joymall: debug
+    com.alibaba.nacos.client.config.impl: warn
+
+
+
+

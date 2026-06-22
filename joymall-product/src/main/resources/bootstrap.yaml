@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: joymall-product
+  cloud:
+    nacos:
+      discovery:
+        server-addr: your-nacos-host:8848
+      config:
+        server-addr: your-nacos-host:8848
+        namespace: your-namespace
+        file-extension: yaml
+        group: dev

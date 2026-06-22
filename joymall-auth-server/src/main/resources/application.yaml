@@ -1,0 +1,24 @@
+server:
+  port: 20000
+
+spring:
+  thymeleaf:
+    cache: false
+  session:
+    store-type: redis
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: your-sentinel-dashboard:8858
+  
+
+  redis:
+    port: 6379
+    host: your-redis-host
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
