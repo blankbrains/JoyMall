@@ -6,3 +6,7 @@ renren-fast/src/main/resources/static/** linguist-vendored
 renren-generator/src/main/resources/views/** linguist-vendored
 renren-generator/src/main/resources/static/** linguist-vendored
 renren-generator/src/main/resources/template/** linguist-vendored
+
+# 标记 Thymeleaf 服务端模板为文档（服务端渲染 HTML，非独立前端代码）
+# 防止 GitHub Linguist 将其计入项目语言统计，使统计更准确反映 Java 占比
+src/main/resources/templates/** linguist-documentation
